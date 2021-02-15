@@ -4,7 +4,7 @@
 //菜单
 void meun()
 {
-	printf("1. 添加 2.显示\n");
+	printf("1. 添加   2.显示\n");
 }
 
 
@@ -25,11 +25,12 @@ struct Contact
 	int size;//存放的联系人的个数
 	int Capacity;//默认的可以存放的联系人的个数，为3
 };
+
 //初始化通讯录
-void CheckCapacity(struct Contact* p)
+void InitContact(struct Contact* p)
 {
 	p->data = (struct PeoInfor*)malloc(3 * sizeof(struct PeoInfor));
-	p->size = -1;
+	p->size = 0;
 	p->Capacity = 3;
 }
 
@@ -59,7 +60,7 @@ void AddContact(struct Contact* p)
 		scanf("%d",&(p->data[p->size].age));
 		printf("请输入要增加的地址：\n");
 		scanf("%s", p->data[p->size].address);
-		p->size += 1;
+		(p->size)++;
 		printf("添加成功\n");
 
 	}
@@ -68,12 +69,8 @@ void AddContact(struct Contact* p)
 
 void ShowContact(struct Contact* p)
 {
-	if (p->size == 0)
-	{
-		printf("通讯录为空\n");
-	}
-	else
-	{
+	
+	
 		printf("名字      电话      性别      年龄      地址\n");
 		printf("%s        %s        %s        %d        %s  \n",
 			p->data[p->size].name,
@@ -81,16 +78,18 @@ void ShowContact(struct Contact* p)
 			p->data[p->size].sex,
 			p->data[p->size].age,
 			p->data[p->size].address);
-	}
+	
 
 }
 	
 	
 int main()
 {
-	struct Contact Con;
-	CheckCapacity(&Con);
 	int input = 0;
+	struct Contact Con;
+	//初始化通讯录
+	InitContact(&Con);
+
 	do
 	{
 		meun();
@@ -109,5 +108,6 @@ int main()
 		}
 	}while(input);
 
+	
 	return 0;
 }
