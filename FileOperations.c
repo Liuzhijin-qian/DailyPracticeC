@@ -125,4 +125,45 @@
 //
 //
 //	return 0;
+////}
+//
+//
+//struct S
+//{
+//	int n;
+//	float lg;
+//	char arr[20];
+//};
+//
+//int main()
+//{
+//	struct S s = { 10,3.14,"liuqian" };
+//	char buf[1024];
+//	FILE* pf = fopen("test.txt", "w");
+//
+//	fprintf(pf, "%d %f %s", s.n, s.lg, s.arr);
+//
+//
+//	return 0;
 //}
+
+
+
+struct S
+{
+	char name[10];
+	int n;
+	float lg;
+};
+
+int main()
+{
+	//struct S s = { "уехЩ",20,3.14 };
+	struct S tmp;
+	FILE* pf = fopen("test.txt", "rb");
+	//fwrite(&s, sizeof(s), 1, pf);
+	fread(&tmp, sizeof(tmp), 1, pf);
+	printf("%s %d %f \n", tmp.name,tmp.n,tmp.lg);
+
+	return 0;
+}
