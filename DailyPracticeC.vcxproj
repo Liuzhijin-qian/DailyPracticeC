@@ -141,7 +141,12 @@
   <ItemGroup>
     <ClCompile Include="DailyPractice.c" />
     <ClCompile Include="FileOperations.c" />
+    <ClCompile Include="FunImplementation.c" />
+    <ClCompile Include="StaticMail-list.c" />
     <ClCompile Include="源.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Mail-List.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

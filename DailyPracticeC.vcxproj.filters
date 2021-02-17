@@ -24,5 +24,16 @@
     <ClCompile Include="FileOperations.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="StaticMail-list.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FunImplementation.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Mail-List.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
